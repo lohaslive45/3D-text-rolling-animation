@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Teko", sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #222;
+  overflow: hidden;
+}
+
+@-webkit-keyframes mov {
+  0% {
+    -webkit-transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+            transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+  }
+  100% {
+    -webkit-transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+            transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+  }
+}
+
+@keyframes mov {
+  0% {
+    -webkit-transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+            transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+  }
+  100% {
+    -webkit-transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+            transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+  }
+}
+
+.base {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.base .box {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation: mov 25s linear infinite;
+          animation: mov 25s linear infinite;
+}
+
+.base .box span {
+  position: absolute;
+  color: aliceblue;
+  font-size: 3.5em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0 10px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(rgba(0, 0, 0, 0.5)), to(transparent));
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.5), transparent);
+  line-height: 0.76em;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  -webkit-transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(135px);
+          transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(135px);
+}
+
+.base .box span i:nth-child(1) {
+  font-style: initial;
+  color: #ff246f;
+}
+
+.base .box span i:nth-child(2) {
+  font-style: initial;
+  color: #12b5ff;
+}
+
+.base .box span i:nth-child(3) {
+  font-style: initial;
+  color: greenyellow;
+}
+/*# sourceMappingURL=style.css.map */

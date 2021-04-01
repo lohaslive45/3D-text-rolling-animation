@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Teko", sans-serif;
+  //font-weight: 700;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #222;
+  overflow: hidden;
+}
+@keyframes mov {
+  0% {
+    //*---perspective產生深度---rotateX直線滾動---rotate傾斜滾動---
+    transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+  }
+}
+
+.base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .box {
+    transform-style: preserve-3d;
+    animation: mov 25s linear infinite; //*---啟動 動畫+設定時長---
+    span {
+      position: absolute;
+      color: aliceblue;
+      font-size: 3.5em;
+      white-space: nowrap; //*---不換行(nowrap)，直到<br>出現---
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0 10px;
+      //!---增加可視度 背景陰影，---
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 0, 0, 0.5),
+        transparent
+      );
+      line-height: 0.76em; //!---增加可視度 上下行距間格，---
+      transform-style: preserve-3d;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+      //!---置中 & X軸旋轉布局 & Z軸3D深度---
+      //!---排成環繞旋轉一圈>> 360deg / 16個(--i)字串 = 22.5deg
+      //!---增加可視度 上下字間格 translateZ(100px) >> (英文字)106px >>(中文字)135px 避免陰影橫線遮擋字---
+      //transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(170px);
+      transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg))
+        translateZ(135px);
+      i:nth-child(1) {
+        font-style: initial; //*---取消原先<i>斜體屬性---
+        color: #ff246f;
+      }
+      i:nth-child(2) {
+        font-style: initial;
+        color: #12b5ff;
+      }
+      i:nth-child(3) {
+        font-style: initial;
+        color: greenyellow;
+      }
+    }
+  }
+}
